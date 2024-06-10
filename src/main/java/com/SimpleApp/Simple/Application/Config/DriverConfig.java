@@ -5,9 +5,11 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Scope;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,6 +38,7 @@ public class DriverConfig {
     }
 
     @Bean
+    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public WebDriverWait webDriverWait() {
         return new WebDriverWait(driver, Duration.ofSeconds(this.timeout));
     }

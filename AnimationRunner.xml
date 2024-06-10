@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Simple App" parallel="tests" thread-count="1">
+    <parameter name="Organization" value="automation1"/>
+    <test name="Animation Click actions">
+        <classes>
+            <class name="com.SimpleApp.Simple.Application.TestRunner.AnimationRunner"/>
+        </classes>
+    </test>
+</suite>
